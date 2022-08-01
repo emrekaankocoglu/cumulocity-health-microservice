@@ -15,8 +15,8 @@ def sendDeviceHealth():
         if(deviceId!=""):
             return jsonify(health=deviceHealth(deviceId),id=deviceId)
         else:
-            abort(400)
+            return jsonify(error="400 Bad Request: Invalid device ID"), 400
     else:
-        abort(401)
+        return jsonify(error="401 Unauthorized"),401
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
