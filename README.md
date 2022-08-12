@@ -1,7 +1,7 @@
 # cumulocity-health-microservice
 A microservice for Cumulocity IoT that approximates the health status of a device based on the alarms raised in a short period versus the trend in the long term.
 ## Installation
-Clone the repository, run build.sh to generate the zip to deploy to your Cumulocity tenant.
+Clone the repository, follow the instructions for docker build, and deploy from the Add Microservices section of the management tenant with the generated .zip file.
 ### Manual Docker Build
 There may be cases script provided by Cumulocity for microservice deployment does not work with the updates and such. In that case, you can follow the guide on Cumulocity IoT Guides (https://cumulocity.com/guides/microservice-sdk/http/#hello-microservice-python) on how to build the Docker container and get it ready for deployment on the platform. List of commands required to produce the deployable .zip taken from the guide adapted to this microservice are:
 ```
