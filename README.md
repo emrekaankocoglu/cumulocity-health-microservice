@@ -16,7 +16,7 @@ The microservice exposes the endpoints <tenant-url>/service/health-microservice/
 
 The microservice has its own role required to get the device status registered to the platform as health read which is added automatically to available roles and configurable on Administration/User Roles tab. Users without this role will be returned 401 Unauthorized as the response when a device's health status is requested.
 
-Authorization is handled by the microservice itself with the Cumulocity platform as suggested, so request authorization header should contain Basic authorization, the rest supported by Cumulocity is not yet supported.
+Authorization is handled by the microservice itself with the Cumulocity platform as suggested in the microservice guide, so request authorization header should contain Basic authorization, the rest supported by Cumulocity is not yet supported.
 
 Device health request should always contain a source parameter with a valid deviceId.
 If none were provided or the deviceId is not correct, it will return 400 Bad Request.
@@ -28,3 +28,4 @@ The request ``` GET <tenant-url>/service/health-microservice/deviceHealth?source
     "id": "<device-id>"
 }
 ```
+This microservice has PER_TENANT deployment type, so every tenant subscribed will get its own microservice, and roles should be set for every tenant independently.
